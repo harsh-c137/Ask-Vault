@@ -1,6 +1,4 @@
-import os
-from dotenv import load_dotenv
-load_dotenv()
+import streamlit as st
 
 from langchain_community.document_loaders import CSVLoader
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -34,7 +32,7 @@ def get_qa_chain(user_query):
     # set the LLM
     llm = ChatGoogleGenerativeAI(
         model="gemini-2.5-flash",
-        api_key=os.environ["GEMINI_API_KEY"],
+        api_key=st.secrets["GEMINI_API_KEY"],
         temperature=0,
         max_tokens=None,
         timeout=None,
