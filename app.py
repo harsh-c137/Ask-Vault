@@ -135,7 +135,7 @@ if os.path.exists("faiss_index"):
 st.markdown("""
 <div class="main-header">
     <h1>AskVault 🧠</h1>
-    <p>Transform your FAQ databases into intelligent conversation partners</p>
+    <p>Find answers from your data, not from thin air.</p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -147,7 +147,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.markdown("""
-Some organizations—like EdTech platforms, e-commerce sites, and customer support teams—maintain large FAQ knowledge bases. But simply adding ChatGPT or any AI chatbot and feeding it a big CSV often leads to hallucinated answers.
+Some organizations like EdTech platforms, e-commerce sites, and customer support teams, maintain large FAQ knowledge bases. But simply adding ChatGPT or any AI chatbot and feeding it a big CSV often leads to hallucinated answers.
 
 **AskVault** solves this by using a **vector database with smart retrieval**, ensuring the AI focuses only on the most relevant information to answer accurately.
 """)
