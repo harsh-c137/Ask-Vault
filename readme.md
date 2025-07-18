@@ -3,6 +3,7 @@ Turn your FAQ database into an intelligent AI assistant.
 
 AskVault is a Q&A chatbot built using LangChain that accurately answers questions by retrieving relevant context from your own CSV knowledge base. This eliminates  hallucinations and thus you get grounded, reliable answers.
 
+This project is live and accessible at [askvault.streamlit.app](https://askvault.streamlit.app/)
 ---
 
 ## 🧑‍💻 How to Run Locally
@@ -42,7 +43,7 @@ python langchain_helper.py
 - Upload your CSV via the UI and click on `Create Knowledgebase` button
 - Please note that it takes a minute or two for your csv to be embedded and loaded into the FAISS VectorDB
 
-## 🔍 What is this project?
+## 🔍 What problem does this project solve?
 
 Organizations like EdTech platforms, e-commerce sites, and support teams maintain huge FAQ databases. But feeding all of that to ChatGPT or a generic chatbot leads to hallucinations when the model lacks context.
 
