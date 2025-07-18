@@ -47,9 +47,9 @@ python langchain_helper.py
 Organizations like EdTech platforms, e-commerce sites, and support teams maintain huge FAQ databases. But feeding all of that to ChatGPT or a generic chatbot leads to hallucinations when the model lacks context.
 
 **AskVault** solves this using:
-- ✅ A vector database (FAISS) to store and search your Q&A efficiently
-- ✅ HuggingFace embeddings for semantic similarity
-- ✅ Gemini LLM for accurate and honest answers
+- A vector database (FAISS) to store and search your Q&A efficiently
+- HuggingFace embeddings for semantic similarity
+- Gemini LLM for accurate and honest answers
 
 Only the most relevant Q&As are passed to the LLM, making it both scalable and trustworthy.
 
@@ -63,7 +63,7 @@ Only the most relevant Q&As are passed to the LLM, making it both scalable and t
 - Gemini (LLM via Google Generative AI)
 
 ## 🧩 Architecture
-![My Architecture](AskVault Architecture.png)
+![My Architecture](./AskVault-Architecture.png)
 
 ## 💡 Common Questions
 **Why FAISS VectorDB?**
