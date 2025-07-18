@@ -213,7 +213,7 @@ question = st.text_input(
 
 # CSV Download section
 st.markdown("""
-[📁 Download sample CSV](https://github.com/codebasics/langchain/blob/main/3_project_codebasics_q_and_a/codebasics_faqs.csv) to see the required format.
+[📁 Download sample CSV](https://github.com/harsh-c137/Ask-Vault/blob/main/codebasics_faqs.csv) to see the required format.
 """)
 
 # Submit and clear buttons
@@ -299,7 +299,7 @@ if uploaded_file is not None:
     # Validate CSV format
     try:
         df = pd.read_csv(uploaded_file)
-        required_columns = ['question', 'answer']
+        required_columns = ['prompt', 'response']
         
         if all(col in df.columns for col in required_columns):
             st.success(f"✅ CSV format validated! Found {len(df)} Q&A pairs.")

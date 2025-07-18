@@ -29,6 +29,12 @@ def get_qa_chain(user_query):
     # create retriever for querying vector database
     retriever = vectordb.as_retriever()
 
+    if hasattr(vectordb, 'index'):
+        faiss_index = vectordb.index
+        print(f"Underlying FAISS index type: {type(faiss_index)}")
+    else:
+        print("Could not directly access underlying FAISS index type from vectordb object.")
+
     # set the LLM
     llm = ChatGoogleGenerativeAI(
         model="gemini-2.5-flash",
@@ -39,8 +45,9 @@ def get_qa_chain(user_query):
     )
 
     # set up prompt template
-    prompt_template = """Below you will be given context and a question. Generate and answer to the question based on the context only.
-    If the context does not contain enough informaiton regarding the question, and you cannot provide an answer with confidence, just say that you don't know what the answer is but DO NOT make stuff up
+    prompt_template = """Below you will be given context and a question. Generate and answer to the question based on the context only. And while answering imagine you are a customer service person. So be polite and well spoken.
+    If the context does not contain enough informaiton regarding the question, and you cannot provide an answer with confidence, just say that you don't know what the answer is but DO NOT make stuff up.
+    In the event that this happens and you have to answer with a "I don't know", don't just say "I don't know" because it sounds bland. Reply more like a polite human in this case
 
     CONTEXT: {context}
 
@@ -65,5 +72,5 @@ def get_qa_chain(user_query):
 
 if __name__ == "__main__":
     user_query = str(input("Ask a question:\n"))
-    rlr = get_qa_chain(user_query)
-    print(rlr['result'])
+    raw_llm_response = get_qa_chain(user_query)
+    print(raw_llm_response['result'])
