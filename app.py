@@ -327,7 +327,7 @@ if uploaded_file is not None:
                             
         else:
             st.error(f"❌ CSV must contain columns: {required_columns}. Found: {list(df.columns)}")
-            st.info("Please ensure your CSV has 'question' and 'answer' columns.")
+            st.info("Please ensure your CSV has 'prompt' and 'response' columns.")
             
     except Exception as e:
         st.error(f"Error reading CSV file: {str(e)}")
@@ -356,7 +356,7 @@ col1, col2, col3 = st.columns(3)
 with col1:
     st.markdown("""
     **1. Upload your FAQ CSV**
-    - Required columns: 'question', 'answer'
+    - Required columns: 'prompt', 'response'
     - UTF-8 encoding
     - No special characters in headers
     """)

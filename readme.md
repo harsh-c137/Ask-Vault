@@ -48,7 +48,7 @@ python langchain_helper.py
 
 Organizations like EdTech platforms, e-commerce sites, and support teams maintain huge FAQ databases. But feeding all of that to ChatGPT or a generic chatbot leads to hallucinations when the model lacks context.
 
-**AskVault** solves this using:
+**AskVault** solves this using a **Retrieval-Augmented Generation (RAG) pipeline**:
 - A vector database (FAISS) to store and search your Q&A efficiently
 - HuggingFace embeddings for semantic similarity
 - Gemini LLM for accurate and honest answers
