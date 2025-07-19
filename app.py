@@ -378,7 +378,7 @@ with col3:
 # 9. Impressed with AskVault section
 st.markdown("""
 <div class="footer">
-    <h3>Like this movie recommender? 🚀</h3>
+    <h3>Impressed with AskVault? 🚀</h3>
     <p>Let's collaborate on your next AI project! I specialize in building intelligent applications that solve real business problems.</p>
     <div class="social-links">
         <a href="https://www.github.com/harsh-c137" target="_blank">
