@@ -87,8 +87,5 @@ The model will say so; no hallucinations whatsoever. You can route fallback to a
 - UI polish and themes
 - Enable user-level multi-tenancy
 
-## 📝 Note about deployment
-This application is deployed on Streamlit Community Cloud. To ensure the application remains responsive and avoids being put to sleep by the hosting platform's resource management, this repository includes a simple GitHub Action [(.github/workflows/keep-awake.yml)](https://github.com/harsh-c137/Ask-Vault/blob/main/.github/workflows/keep-awake.yaml) that sends a request to the app every 30 minutes.
-
 ## 🤝 Let's Collaborate
 - If you like AskVault and want to build your own AI-powered tool, feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/harsh-deshpande-v1/) :)
