@@ -29,12 +29,6 @@ def get_qa_chain(user_query):
     # create retriever for querying vector database
     retriever = vectordb.as_retriever()
 
-    if hasattr(vectordb, 'index'):
-        faiss_index = vectordb.index
-        print(f"Underlying FAISS index type: {type(faiss_index)}")
-    else:
-        print("Could not directly access underlying FAISS index type from vectordb object.")
-
     # set the LLM
     llm = ChatGoogleGenerativeAI(
         model="gemini-2.5-flash",
