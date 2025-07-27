@@ -18,6 +18,5 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Runs a single command using the runners shell
-      - name: Send request to the app
-        run: curl -s "https://askvault.streamlit.app/" > /dev/null
-        # The '-s' flag is for silent mode, and '> /dev/null' discards the output.
+      - name: Send browser-like request to the app
+        run: curl -s -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36" "https://askvault.streamlit.app/" > /dev/null
