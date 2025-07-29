@@ -9,6 +9,10 @@ on:
 jobs:
   keep-alive:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+    
     steps:
       - name: Checkout streamlit-prod branch
         uses: actions/checkout@v3
