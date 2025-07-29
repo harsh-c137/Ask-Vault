@@ -1,22 +1,31 @@
-name: Keep Streamlit App Awake
+name: Keep Streamlit App Alive via Commit
 
 on:
   schedule:
-    # Uses crontab syntax. '*/30 * * * *' is "at every 30th minute".
-    - cron:  '*/30 * * * *'
-  
-  # Allows you to run this workflow manually from the Actions tab
+    # Runs every 30 minutes
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "ping"
-  ping:
-    # The type of runner that the job will run on
+  keep-alive:
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Runs a single command using the runners shell
-      - name: Send browser-like request to the app
-        run: curl -s -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36" "https://askvault.streamlit.app/" > /dev/null
+      - name: Checkout streamlit-prod branch
+        uses: actions/checkout@v3
+        with:
+          ref: streamlit-prod # Ensures we are on the correct branch
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Create Dummy Commit
+        run: |
+          # The --allow-empty flag is crucial as it creates a commit even if there are no changes.
+          git commit --allow-empty -m "feat: Keep-alive commit"
+
+      - name: Push Dummy Commit
+        run: |
+          # Pushes the commit to the streamlit-prod branch to trigger a redeployment.
+          git push origin streamlit-prod
